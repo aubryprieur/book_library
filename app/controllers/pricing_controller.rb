@@ -1,4 +1,4 @@
-class PrincingController < ApplicationController
+class PricingController < ApplicationController
   layout "subscribe"
 
   def index

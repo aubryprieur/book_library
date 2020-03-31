@@ -53,12 +53,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'simple_form'
 gem 'devise'
 gem 'bulma-rails'
 gem 'sidekiq'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 group :development, :test do
   gem 'better_errors'
+  gem 'binding_of_caller', '~> 0.8.0'
   gem 'guard'
   gem 'guard-livereload'
 end
