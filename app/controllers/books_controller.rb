@@ -68,10 +68,10 @@ class BooksController < ApplicationController
 
     if type == "add"
       current_user.library_additions << @book
-      redirect_to library_index_path, notice: "#{@book.tittle} was added to your library"
+      redirect_to library_index_path, notice: "#{@book.title} was added to your library"
     elsif type == "remove"
       current_user.library_additions.delete(@book)
-      redirect_to root_path, notice: "#{@book.tittle} was removed from your library"
+      redirect_to root_path, notice: "#{@book.title} was removed from your library"
     else
       # type is missing nothing should happen
       redirect_to book_path(@book), notice: "Looks like nothing happend. Try once more!"
@@ -86,6 +86,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :description, :author, :user_id)
+      params.require(:book).permit(:title, :description, :author, :thumbnail, :user_id)
     end
 end
