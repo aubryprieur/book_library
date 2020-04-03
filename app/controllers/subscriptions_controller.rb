@@ -23,13 +23,13 @@ class SubscriptionsController < ApplicationController
 
     subscription = customer.subscriptions.create(plan: plan.id)
 
-    option = {
+    options = {
       stripe_id: customer.id,
       stripe_subscription_id: subscription.id,
       subscribed: true
     }
 
-    option.merge!(
+    options.merge!(
       card_last4: params[:user][:card_last4],
       card_exp_month: params[:user][:card_exp_month],
       card_exp_year: params[:user][:card_exp_year],
